@@ -6,6 +6,10 @@ phases:
       ruby: 3.0
   pre_build:
     commands:
+      - echo "Installing Ruby 3.0..."
+      - rbenv install 3.0.0
+      - rbenv global 3.0.0
+      - ruby -v 
       - bundle install
   build:
     commands:
