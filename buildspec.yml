@@ -3,21 +3,20 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      ruby: 3.0
-  pre_build:
+       ruby: 3.0
     commands:
-      - echo "Installing Ruby 3.0..."
-      - rbenv install 3.0.0
-      - rbenv global 3.0.0
-      - ruby -v 
-      - bundle config set --local without 'development test' # Skip installation of development and test group gems
+      - echo "Installing Bundler..."
+      - gem install bundler 
       - bundle install
-  build:
+  pre-build:
     commands:
-      - bundle exec rake db:create db:migrate # Use bundle exec for rake commands
+      - echo "Preparing database to run tests..."
+      - bundle exec rails db:create RAILS_ENV=test 
+      - bundle exec rails db:migrate RAILS_ENV=test # Use bundle exec for rake commands
       - echo "Running tests..."
       - bundle exec rspec spec
-  post_build:
+  build:
     commands:
       - echo "Build completed successfully!"
+      - bundle exec rspec spec
 
