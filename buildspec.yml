@@ -10,14 +10,13 @@ phases:
       - rbenv install 3.0.0
       - rbenv global 3.0.0
       - ruby -v 
+      - bundle config set --local without 'development test' # Skip installation of development and test group gems
       - bundle install
   build:
     commands:
-      - bundle exec rake db:create db:migrate # Or any other necessary build commands
+      - bundle exec rake db:create db:migrate # Use bundle exec for rake commands
+      - echo "Running tests..."
+      - bundle exec rspec spec
   post_build:
     commands:
       - echo "Build completed successfully!"
-  build:
-    commands:
-      - echo "Running tests..."
-      - bundle exec rspec spec
