@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
 
 
     def index
-        @employees = Employee.all
+        @employee = Employee.all
     end
 
     def new
@@ -18,6 +18,7 @@ class EmployeesController < ApplicationController
         if @employee.save
             redirect_to employees_path, notice: 'New Employee details has been saved successfully'
         else
+            flash.now[:alert] = 'Failure to save employee details'
             render :new
         end
 
@@ -62,7 +63,8 @@ end
 def set_employee
     @employee = Employee.find(params[:id])
     rescue ActiveRecord::RecordNotFOund => error
-        redirect_to employees_path, notice: error
+        flash[:notice] = "Employee not found"
+        redirect_to employees_path
 
 end
 

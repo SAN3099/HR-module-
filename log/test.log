@@ -136,3 +136,643 @@ FOREIGN KEY ("employee_id")
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "agnus@oconnell.example"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (24.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms | Allocations: 4914)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 152)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 4967)
+  [1m[36mEmployee Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 4968)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 4967)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 4967)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (6.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "irene_quigley@schimmel-conroy.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (14.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "irene_quigley@schimmel-conroy.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:20:28.260545"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:20:28.260260"], ["updated_at", "2024-05-05 15:20:28.260260"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 33.7ms | Allocations: 2163)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 407.8ms
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lilliana.beatty@langworth-koepp.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "lilliana.beatty@langworth-koepp.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:20:28.937485"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:20:28.937366"], ["updated_at", "2024-05-05 15:20:28.937366"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 0.6ms | Allocations: 218)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 2.2ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "marin_stokes@borer.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "marin_stokes@borer.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:20:28.950403"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:20:28.950296"], ["updated_at", "2024-05-05 15:20:28.950296"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 0.6ms | Allocations: 218)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 2.2ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "truman_nienow@bashirian.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "truman_nienow@bashirian.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:20:28.962944"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:20:28.962828"], ["updated_at", "2024-05-05 15:20:28.962828"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 0.6ms | Allocations: 218)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 2.2ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rocco_schroeder@roberts.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "rocco_schroeder@roberts.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:23:30.249449"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:23:30.249295"], ["updated_at", "2024-05-05 15:23:30.249295"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 1.9ms | Allocations: 2173)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 141.9ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "micheal_glover@conroy.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "micheal_glover@conroy.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:23:30.480933"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:23:30.480868"], ["updated_at", "2024-05-05 15:23:30.480868"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 0.3ms | Allocations: 228)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 1.2ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nick@renner.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nick@renner.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:23:30.488213"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:23:30.488116"], ["updated_at", "2024-05-05 15:23:30.488116"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 0.5ms | Allocations: 228)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 2.0ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "chas.kohler@kunde-davis.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "chas.kohler@kunde-davis.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-05-05 15:23:30.498800"], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:23:30.498698"], ["updated_at", "2024-05-05 15:23:30.498698"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/srishti/.rvm/gems/ruby-3.0.0/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 0.6ms | Allocations: 228)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 2.0ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "arden.marvin@oconnell.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "arden.marvin@oconnell.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:24:54.089620"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:24:54.103053"], ["updated_at", "2024-05-05 15:24:54.103053"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jewel@jakubowski.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jewel@jakubowski.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:24:54.177005"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:24:54.177832"], ["updated_at", "2024-05-05 15:24:54.177832"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "son_schowalter@langosh-olson.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "son_schowalter@langosh-olson.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:24:54.181939"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:24:54.182586"], ["updated_at", "2024-05-05 15:24:54.182586"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tracey.lynch@moore.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "tracey.lynch@moore.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:24:54.276306"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:24:54.277280"], ["updated_at", "2024-05-05 15:24:54.277280"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elvie@turcotte.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elvie@turcotte.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:25:40.557054"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:25:40.563235"], ["updated_at", "2024-05-05 15:25:40.563235"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:25:40.846635"], ["updated_at", "2024-05-05 15:25:40.846635"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 17ms (ActiveRecord: 0.7ms | Allocations: 25751)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elda@cruickshank.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elda@cruickshank.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:25:40.881409"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:25:40.882960"], ["updated_at", "2024-05-05 15:25:40.882960"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:25:40.888648"], ["updated_at", "2024-05-05 15:25:40.888648"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1226)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ellsworth_schiller@altenwerth-donnelly.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ellsworth_schiller@altenwerth-donnelly.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:25:40.899000"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:25:40.899895"], ["updated_at", "2024-05-05 15:25:40.899895"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:25:40.904340"], ["updated_at", "2024-05-05 15:25:40.904340"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1222)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aron@goldner-huels.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aron@goldner-huels.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:25:40.909176"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:25:40.909898"], ["updated_at", "2024-05-05 15:25:40.909898"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "nil"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "nil"], ["last_name", "nil"], ["email", "nil"], ["city", "nil"], ["state", "nil"], ["country", "nil"], ["pincode", "nil"], ["address_line_1", "nil"], ["address_line_2", nil], ["created_at", "2024-05-05 15:25:40.913546"], ["updated_at", "2024-05-05 15:25:40.913546"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1222)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jimmy_larson@swaniawski.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jimmy_larson@swaniawski.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:27:11.421139"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:27:11.425941"], ["updated_at", "2024-05-05 15:27:11.425941"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:27:11.661985"], ["updated_at", "2024-05-05 15:27:11.661985"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms | Allocations: 25751)
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nickolas_paucek@lind.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nickolas_paucek@lind.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:27:11.677752"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:27:11.678564"], ["updated_at", "2024-05-05 15:27:11.678564"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:27:11.682280"], ["updated_at", "2024-05-05 15:27:11.682280"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1226)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teri@mraz.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "teri@mraz.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:27:11.686936"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:27:11.687669"], ["updated_at", "2024-05-05 15:27:11.687669"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:27:11.692051"], ["updated_at", "2024-05-05 15:27:11.692051"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1222)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jerome.kulas@brakus.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jerome.kulas@brakus.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:27:11.702103"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:27:11.703473"], ["updated_at", "2024-05-05 15:27:11.703473"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "nil"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "nil"], ["last_name", "nil"], ["email", "nil"], ["city", "nil"], ["state", "nil"], ["country", "nil"], ["pincode", "nil"], ["address_line_1", "nil"], ["address_line_2", nil], ["created_at", "2024-05-05 15:27:11.707854"], ["updated_at", "2024-05-05 15:27:11.707854"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1222)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jody.ziemann@yost.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jody.ziemann@yost.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:29:03.413845"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:29:03.434849"], ["updated_at", "2024-05-05 15:29:03.434849"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:29:03.688032"], ["updated_at", "2024-05-05 15:29:03.688032"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 27ms (ActiveRecord: 0.9ms | Allocations: 25768)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rodolfo@lueilwitz-gottlieb.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "rodolfo@lueilwitz-gottlieb.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:29:03.717329"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:29:03.718186"], ["updated_at", "2024-05-05 15:29:03.718186"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:29:03.722205"], ["updated_at", "2024-05-05 15:29:03.722205"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1226)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sarina.jacobson@streich-brakus.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sarina.jacobson@streich-brakus.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:29:03.729952"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:29:03.731090"], ["updated_at", "2024-05-05 15:29:03.731090"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:29:03.737140"], ["updated_at", "2024-05-05 15:29:03.737140"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1222)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ida@veum-monahan.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "ida@veum-monahan.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:29:03.746254"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:29:03.747346"], ["updated_at", "2024-05-05 15:29:03.747346"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "nil"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "nil"], ["last_name", "nil"], ["email", "nil"], ["city", "nil"], ["state", "nil"], ["country", "nil"], ["pincode", "nil"], ["address_line_1", "nil"], ["address_line_2", nil], ["created_at", "2024-05-05 15:29:03.751827"], ["updated_at", "2024-05-05 15:29:03.751827"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1222)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nicky.larkin@waters-oconnell.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nicky.larkin@waters-oconnell.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:32:48.357068"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:32:48.369575"], ["updated_at", "2024-05-05 15:32:48.369575"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:32:48.636691"], ["updated_at", "2024-05-05 15:32:48.636691"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms | Allocations: 25751)
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jenna@steuber-marquardt.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jenna@steuber-marquardt.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:32:48.652651"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:32:48.653422"], ["updated_at", "2024-05-05 15:32:48.653422"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:32:48.657127"], ["updated_at", "2024-05-05 15:32:48.657127"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1226)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "verna@cronin.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "verna@cronin.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:32:48.661741"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:32:48.662433"], ["updated_at", "2024-05-05 15:32:48.662433"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "nil"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "nil"], ["last_name", "nil"], ["email", "nil"], ["city", "nil"], ["state", "nil"], ["country", "nil"], ["pincode", "nil"], ["address_line_1", "nil"], ["address_line_2", nil], ["created_at", "2024-05-05 15:32:48.666389"], ["updated_at", "2024-05-05 15:32:48.666389"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1222)
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maritza@robel.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "maritza@robel.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:32:48.673649"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:32:48.674337"], ["updated_at", "2024-05-05 15:32:48.674337"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "nil"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "nil"], ["last_name", "nil"], ["email", "nil"], ["city", "nil"], ["state", "nil"], ["country", "nil"], ["pincode", "nil"], ["address_line_1", "nil"], ["address_line_2", nil], ["created_at", "2024-05-05 15:32:48.678153"], ["updated_at", "2024-05-05 15:32:48.678153"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1222)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nidia@schroeder-runolfsdottir.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nidia@schroeder-runolfsdottir.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:33:43.169684"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:33:43.191256"], ["updated_at", "2024-05-05 15:33:43.191256"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:33:43.395425"], ["updated_at", "2024-05-05 15:33:43.395425"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 15ms (ActiveRecord: 0.5ms | Allocations: 25751)
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zane@considine.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "zane@considine.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:33:43.412471"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:33:43.413279"], ["updated_at", "2024-05-05 15:33:43.413279"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:33:43.416986"], ["updated_at", "2024-05-05 15:33:43.416986"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 1226)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aline@murphy-mante.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aline@murphy-mante.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:33:43.421515"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:33:43.422218"], ["updated_at", "2024-05-05 15:33:43.422218"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"", "city"=>"", "country"=>"", "email"=>"", "first_name"=>"", "last_name"=>"", "pincode"=>"", "state"=>""}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered employees/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 300)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 430)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4428)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "lanora_mayert@towne.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "lanora_mayert@towne.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:33:43.433995"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:33:43.434709"], ["updated_at", "2024-05-05 15:33:43.434709"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"nil", "city"=>"nil", "country"=>"nil", "email"=>"nil", "first_name"=>"nil", "last_name"=>"nil", "pincode"=>"nil", "state"=>"nil"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "nil"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "nil"], ["last_name", "nil"], ["email", "nil"], ["city", "nil"], ["state", "nil"], ["country", "nil"], ["pincode", "nil"], ["address_line_1", "nil"], ["address_line_2", nil], ["created_at", "2024-05-05 15:33:43.438549"], ["updated_at", "2024-05-05 15:33:43.438549"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1222)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sol_steuber@hansen-bernier.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (11.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sol_steuber@hansen-bernier.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:34:13.420794"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:34:13.426142"], ["updated_at", "2024-05-05 15:34:13.426142"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:34:13.664902"], ["updated_at", "2024-05-05 15:34:13.664902"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 17ms (ActiveRecord: 0.6ms | Allocations: 25751)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "claretta@kuvalis.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "claretta@kuvalis.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:34:13.682787"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:34:13.683609"], ["updated_at", "2024-05-05 15:34:13.683609"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"New Yorker Hotel", "city"=>"New York", "country"=>"US", "email"=>"JD@bot.com", "first_name"=>"John", "last_name"=>"Doe", "pincode"=>"10001", "state"=>"New York"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "JD@bot.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "email", "city", "state", "country", "pincode", "address_line_1", "address_line_2", "created_at", "updated_at", "date_of_birth", "job_title", "date_of_joining", "bio") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "John"], ["last_name", "Doe"], ["email", "JD@bot.com"], ["city", "New York"], ["state", "New York"], ["country", "US"], ["pincode", "10001"], ["address_line_1", "New Yorker Hotel"], ["address_line_2", nil], ["created_at", "2024-05-05 15:34:13.687442"], ["updated_at", "2024-05-05 15:34:13.687442"], ["date_of_birth", nil], ["job_title", nil], ["date_of_joining", nil], ["bio", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/employees
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1226)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "donald@bartell.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "donald@bartell.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:34:13.692562"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:34:13.693643"], ["updated_at", "2024-05-05 15:34:13.693643"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"", "city"=>"", "country"=>"", "email"=>"", "first_name"=>"", "last_name"=>"", "pincode"=>"", "state"=>""}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered employees/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 300)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 430)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 4430)
+  [1m[36mEmployee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "gregorio_spinka@willms.example"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "gregorio_spinka@willms.example"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", "2024-05-05 15:34:13.708771"], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2024-05-05 15:34:13.709733"], ["updated_at", "2024-05-05 15:34:13.709733"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"address_line_1"=>"", "city"=>"", "country"=>"", "email"=>"", "first_name"=>"", "last_name"=>"", "pincode"=>"", "state"=>""}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered employees/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 203)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1396)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
